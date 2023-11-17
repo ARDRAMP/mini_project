@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic about Programming Languages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url("https://wallpaperset.com/w/full/8/8/0/462749.jpg");
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+     <!-- BOOTSTRAP CORE STYLE CSS -->
+     <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+     <!-- FONT AWESOME CSS -->
+ <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+      <!-- FLEXSLIDER CSS -->
+ <link href="{% static 'assets/css/flexslider.css' %}" rel="stylesheet" />
+     <!-- CUSTOM STYLE CSS -->
+     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />    
+   <!-- Google	Fonts -->
+ <!-- Google Fonts -->
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " id="menu">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img class="logo-custom" src="{% static 'assets/img/logo180-50.png' %}" alt=""  /></a>
+            </div>
+            <div class="navbar-collapse collapse move-me">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="#home">HOME</a></li>
+                    <li><a href="#features-sec">FEATURES</a></li>
+                    <li><a href="#faculty-sec">FACULTY</a></li>
+                    <li><a href="#course-sec">COURSES</a></li>
+                    <li><a href="#contact-sec">CONTACT</a></li> 
+                     
+                     <li><a href="{% url "user_login" %}">LOGIN</a></li>
+
+                     
+
+                </ul>
+            </div>
+        </div>
+
+        </div>
+        <br><br>        <br><br>
+    <header>
+        <h1>BASICS ABOUT PROGRAMMING LANGUAGES</h1>
+    </header>
+
+    <!-- Add an image here -->
+
+    <section id="overview">
+        <h2>Overview</h2>
+        <p>
+            Programming languages are tools used by programmers to instruct computers to perform specific tasks.<br><br>
+            They act as a means of communication between humans and computers, allowing us to write instructions
+            that computers can understand and execute.
+        </p>
+    </div>
+    <div class="image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ58n60-wPNp98YBYB9gE0NF4fNz6Q6zTDczQ&usqp=CAU" alt="course1 Image">
+    </div>
+    </section>
+
+    <section id="types">
+        <h2>Types of Programming Languages</h2>
+        <p>
+            There are various types of programming languages, including:
+            <ul>
+                <li><strong><b>High-Level Languages:</strong></b> Designed to be easily understood by humans, examples include Python, Java, and C#.</li><br>
+                <li><strong><b>Low-Level Languages:</strong></b>Closer to machine code, examples include Assembly languages.</li><br>
+                <li><b><strong>Scripting Languages:</strong></b>Interpreted languages for automation, examples include JavaScript and Python.</li><br>
+                <li><strong><b>Functional Languages:</strong></b>Focus on mathematical functions, examples include Haskell and Lisp.</li><br>
+            </ul>
+        </p>
+    </section>
+
+    <section id="popular-languages">
+        <h2>Popular Programming Languages</h2>
+        <p>
+            Some of the most popular programming languages today include:
+            <ul>
+                <li>JavaScript</li><br>
+                <li>Python</li><br>
+                <li>Java</li><br>
+                <li>C++</li><br>
+                <li>Swift</li><br>
+                <li>Go</li><br>
+                <li>Rust</li><br>
+            </ul>
+        </p>
+    </section>
+
+    <section id="learning-resources">
+        <h2>Learning Resources</h2>
+        <p>
+            Whether you're a beginner or an experienced programmer, there are many resources available for learning programming languages. Some recommended resources include online courses, tutorials, and books.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Programming Basics Guide</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
