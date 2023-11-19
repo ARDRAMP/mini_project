@@ -10,4 +10,8 @@ urlpatterns = [
     path('c1/', views.c1, name ='c1'),
     path('c2/', views.c2, name ='c2'),
     path('c3/', views.c3, name ='c3'),
+    path('studenthome/', views.studenthome, name ='studenthome'),
+    path('enroll/', views.enroll, name ='enroll'),
+    path('task/', views.task, name ='task'),
+    path('calendar/', views.calendar, name ='calendar'),
 ]

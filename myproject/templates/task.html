@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between; /* Align items to the left and right */
+            align-items: center; /* Center vertically */
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        h1 {
+            margin: 0 auto; /* Center the text horizontally */
+        }
+
+        section {
+            margin: 1em;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            display: inline-block;
+            overflow: hidden;
+            max-width: 600px; /* Limiting width for better readability on larger screens */
+            margin: 20px auto; /* Centering the section on the page */
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="{% url "studenthome" %}">HOME</a>
+        <h1>Student Tasks</h1>
+    </header>
+
+    <section>
+        <h2>Your Tasks</h2>
+        <ul>
+            <li>
+                <input type="checkbox" id="task1" name="task1">
+                <label for="task1">Complete programming assignment</label>
+            </li>
+            <li>
+                <input type="checkbox" id="task2" name="task2">
+                <label for="task2">Read chapters 5-7 for history class</label>
+            </li>
+            <li>
+                <input type="checkbox" id="task3" name="task3">
+                <label for="task3">Prepare for upcoming math quiz</label>
+            </li>
+            <!-- Add more tasks as needed -->
+        </ul>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ddd;
+            padding: 1em;
+        }
+
+        section {
+            margin: 1em;
+            width: 200px; /* Fixed width for all sections */
+            height: 200px; /* Fixed height for all sections */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: inline-block;
+            overflow: hidden; /* Hide content that goes beyond the specified width and height */
+        }
+
+        section i {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        section h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to SensorBrige</h1>
+    </header>
+
+    <nav><br><br>
+    </nav>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <section id="profile"><br><br>
+        <i class="fas fa-user"></i>
+        <a href="#profile"><h2>Profile</h2></a>
+    </section>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <section id="calendar"><br><br>
+        <i class="fas fa-calendar-alt"></i> <!-- Changed icon to calendar icon -->
+        <a href="{% url "calendar" %}"><h2>Calendar</h2></a>
+    
+   </section>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <section id="tasks"><br><br>
+        <i class="fas fa-tasks"></i>
+        <a href="{% url "task" %}"><h2>Tasks</h2></a>
+    </section>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    
+    <section id="enrollment"><br><br>
+        <i class="fas fa-book"></i>
+        <a href="{% url "enroll" %}"><h2>Enrollment</h2></a>
+    </section>
+    <footer>
+        <p>&copy; 2023 SensorBrige. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

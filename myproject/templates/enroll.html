@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Enrollment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between; /* Align items to the left and right */
+            align-items: center; /* Center vertically */
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        form {
+            margin-top: 50px;
+        }
+        h1 {
+            margin: 0 auto; /* Center the text horizontally */
+        }
+
+        select {
+            font-size: 16px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #enrolledCourse {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        #paymentSection {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-field {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="{% url "studenthome" %}">HOME</a>
+        <h1>Welcome to SensorBrige</h1>
+    </header>
+
+    <form onsubmit="enrollCourse(event)">
+        <label for="courses">Select a Course:</label>
+        <select id="courses" name="courses">
+            <option value="BASICS ABOUT PROGRAMMING LANGUAGES">BASICS ABOUT PROGRAMMING LANGUAGES</option>
+            <option value="OVERVIEW OF MS-OFFICE">OVERVIEW OF MS-OFFICE</option>
+            <option value="WEB PROGRAMMING ">WEB PROGRAMMING </option>
+            <!-- Add more courses as needed -->
+        </select>
+
+        <br>
+
+        <button type="submit">Enroll</button>
+    </form>
+
+    <p id="enrolledCourse"></p>
+  
+    <div id="paymentSection">
+        <h2>Payment Section</h2>
+        <div id="paymentFields"></div>
+    </div>
+
+    <script>
+        function enrollCourse(event) {
+            event.preventDefault(); // Prevents the form from submitting
+            var selectedCourse = document.getElementById("courses").value;
+            var enrolledCourseElement = document.getElementById("enrolledCourse");
+            enrolledCourseElement.innerHTML = "Enrolled Course: <a href='#' onclick='showPaymentSection()'>" + selectedCourse + "</a>";
+            generatePaymentFields(selectedCourse);
+            alert("You have successfully enrolled in the selected course!");
+        }
+
+        function showPaymentSection() {
+            document.getElementById("paymentSection").style.display = "block";
+        }
+
+        function generatePaymentFields(course) {
+            var paymentFieldsContainer = document.getElementById("paymentFields");
+            paymentFieldsContainer.innerHTML = ""; // Clear previous fields
+
+            // Add payment fields based on the selected course
+            switch (course) {
+                case "BASICS ABOUT PROGRAMMING LANGUAGES":
+                    // Add payment fields specific to this course
+                    paymentFieldsContainer.innerHTML += "<input class='payment-field' type='text' placeholder='Card Number'>";
+                    paymentFieldsContainer.innerHTML += "<input class='payment-field' type='text' placeholder='Expiration Date'>";
+                    // Add more fields as needed
+                    break;
+                case "OVERVIEW OF MS-OFFICE":
+                    // Add payment fields specific to this course
+                    paymentFieldsContainer.innerHTML += "<input class='payment-field' type='text' placeholder='Card Number'>";
+                    paymentFieldsContainer.innerHTML += "<input class='payment-field' type='text' placeholder='Expiration Date'>";
+                    // Add more fields as needed
+                    break;
+                case "WEB PROGRAMMING ":
+                    // Add payment fields specific to this course
+                    paymentFieldsContainer.innerHTML += "<input class='payment-field' type='text' placeholder='Card Number'>";
+                    paymentFieldsContainer.innerHTML += "<input class='payment-field' type='text' placeholder='Expiration Date'>";
+                    // Add more fields as needed
+                    break;
+                // Add cases for more courses
+                default:
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>

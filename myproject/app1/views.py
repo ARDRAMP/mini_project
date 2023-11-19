@@ -12,7 +12,14 @@ def c2(request):
     return render(request,'c2.html')
 def c3(request):
     return render(request,'c3.html')
-
+def studenthome(request):
+    return render(request,'studenthome.html')
+def enroll(request):
+    return render(request,'enroll.html')
+def task(request):
+    return render(request,'task.html')
+def calendar(request):
+    return render(request,'calendar.html')
 
 
 from django.shortcuts import render, redirect
@@ -77,7 +84,7 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            return redirect('index')  # Replace 'index' with the name of your home page URL pattern
+            return redirect('studenthome')  # Replace 'index' with the name of your home page URL pattern
         else:
             error_message = "Invalid credentials. Please try again."
 
