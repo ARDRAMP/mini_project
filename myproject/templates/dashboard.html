@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+            padding: 0.5em;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+        }
+
+        section {
+            margin: 1em;
+            padding: 1em;
+            background-color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: white;
+            margin-top: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Management System</h1>
+    </header>
+
+    <nav>
+        <a href="#" id="dashboard-link">Dashboard</a>
+        <a href="#" id="students-link">Students</a>
+        <a href="#" id="courses-link">Courses</a>
+    </nav>
+
+    <section id="dashboard">
+        <h2>Dashboard</h2>
+        <!-- Dashboard content goes here -->
+        <p>Welcome to the Student Management System Dashboard.</p>
+    </section>
+
+    <section id="students" style="display: none;">
+        <h2>Students</h2>
+        <!-- Students content goes here -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>20</td>
+                    <td>A</td>
+                </tr>
+                <!-- Add more student rows as needed -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="courses" style="display: none;">
+        <h2>Courses</h2>
+        <!-- Courses content goes here -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Credit Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CSCI101</td>
+                    <td>Introduction to Computer Science</td>
+                    <td>3</td>
+                </tr>
+                <!-- Add more course rows as needed -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Student Management System</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle navigation
+        const dashboardLink = document.getElementById('dashboard-link');
+        const studentsLink = document.getElementById('students-link');
+        const coursesLink = document.getElementById('courses-link');
+
+        const dashboardSection = document.getElementById('dashboard');
+        const studentsSection = document.getElementById('students');
+        const coursesSection = document.getElementById('courses');
+
+        dashboardLink.addEventListener('click', () => {
+            dashboardSection.style.display = 'block';
+            studentsSection.style.display = 'none';
+            coursesSection.style.display = 'none';
+        });
+
+        studentsLink.addEventListener('click', () => {
+            dashboardSection.style.display = 'none';
+            studentsSection.style.display = 'block';
+            coursesSection.style.display = 'none';
+        });
+
+        coursesLink.addEventListener('click', () => {
+            dashboardSection.style.display = 'none';
+            studentsSection.style.display = 'none';
+            coursesSection.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

@@ -1,14 +1,16 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overview of Microsoft Office</title>
+    <title>Basics About Programming Languages</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            padding-left: 40px; /* Increase padding to move content further to the right */
             background-image: url("https://wallpaperset.com/w/full/8/8/0/462749.jpg");
         }
 
@@ -33,10 +35,39 @@
             text-align: center;
         }
     </style>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <!-- FONT AWESOME CSS -->
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+    <!-- FLEXSLIDER CSS -->
+    <link href="{% static 'assets/css/flexslider.css' %}" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
 </head>
-<body>
 
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top " id="menu">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img class="logo-custom" src="{% static 'assets/img/logo180-50.png' %}" alt="" /></a>
+            </div>
+            <div class="navbar-collapse collapse move-me">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url "index" %}">HOME</a></li>
+                
+                    <li><a href="{% url 'user_login' %}">LOGIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br><br>
     <header>
         <h1>Overview of Microsoft Office</h1>
     </header>
@@ -84,4 +115,5 @@
     </footer>
 
 </body>
+
 </html>

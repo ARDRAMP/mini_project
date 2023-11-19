@@ -1,23 +1,22 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Programming Basics</title>
+    <title>Basics About Programming Languages</title>
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 20px;
-            background-image: url("https://example.com/your-background-image.jpg");
-            background-size: cover;
-            color: #fff;
+            padding-left: 40px; /* Increase padding to move content further to the right */
+            background-image: url("https://wallpaperset.com/w/full/8/8/0/462749.jpg");
         }
 
         header {
             text-align: center;
             margin-bottom: 20px;
-            color: #007BFF;
         }
 
         section {
@@ -32,54 +31,92 @@
             line-height: 1.6;
         }
 
-        .image img {
-            width: 100%;
-            height: auto;
-        }
-
-        footer {
+        .image {
             text-align: center;
-            margin-top: 30px;
         }
     </style>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <!-- FONT AWESOME CSS -->
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+    <!-- FLEXSLIDER CSS -->
+    <link href="{% static 'assets/css/flexslider.css' %}" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css" integrity="sha384-rbs5jfJvi1mDO5Kp8FQOp6c95Twb0sPb0l3Q6sYIBvLI+uaefxk1l0S7g9iY1TgP" crossorigin="anonymous">
 </head>
+
 <body>
+    <div class="navbar navbar-inverse navbar-fixed-top " id="menu">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img class="logo-custom" src="{% static 'assets/img/logo180-50.png' %}" alt="" /></a>
+            </div>
+            <div class="navbar-collapse collapse move-me">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url "index" %}">HOME</a></li>
+                    
+                    <li><a href="{% url 'user_login' %}">LOGIN</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br><br>
 
     <header>
-        <h1>WEB PROGRAMMING BASICS</h1>
+        <h1>WEB PROGRAMMING COURSE</h1>
     </header>
 
     <section id="overview">
         <h2>Overview</h2>
         <p>
-            Web programming involves creating and maintaining websites or web applications. It encompasses various technologies and languages to build interactive and dynamic web pages.
+            Welcome to the Web Programming Course! This course provides a comprehensive understanding of web development technologies and practices. Learn the fundamentals and advance your skills in building dynamic and interactive websites.
         </p>
-        <div class="image">
-            <img src="https://example.com/your-web-programming-image.jpg" alt="Web Programming Image">
-        </div>
     </section>
 
     <section id="types">
-        <h2>Types of Web Programming Languages</h2>
+        <h2>Topics Covered</h2>
         <p>
-            There are several languages used in web programming, including:
+            Explore a variety of topics, including:
             <ul>
-                <li><strong>HTML:</strong> Markup language for structuring content.</li>
-                <li><strong>CSS:</strong> Stylesheet language for designing the presentation of HTML.</li>
-                <li><strong>JavaScript:</strong> Programming language for adding interactivity and dynamic content.</li>
-                <li><strong>PHP:</strong> Server-side scripting language for web development.</li>
+                <li><strong>HTML5 and CSS3:</strong> Building the structure and styling of web pages.</li>
+                <li><strong>JavaScript:</strong> Adding interactivity and dynamic behavior to websites.</li>
+                <li><strong>Responsive Web Design:</strong> Creating websites that work well on various devices and screen sizes.</li>
+                <li><strong>Server-side scripting:</strong> Using Node.js and Express.js.</li>
+                <li><strong>Database integration:</strong> MongoDB.</li>
+                <li><strong>Introduction to React.js:</strong> Popular web framework.</li>
             </ul>
         </p>
     </section>
 
-    <!-- Add more sections as needed for specific topics in web programming -->
+    <section id="requirements">
+        <h2>Requirements</h2>
+        <p>
+            To get the most out of this course, it is recommended to have a basic understanding of programming concepts and familiarity with HTML and CSS fundamentals.
+        </p>
+    </section>
+
+    <section id="instructor">
+        <h2>Course Instructor</h2>
+        <p>
+            The course will be instructed by experienced professionals in the field of web development, ensuring a hands-on and practical learning experience.
+        </p>
+    </section>
 
     <footer>
-        <p>&copy; 2023 Your Web Programming Basics Guide</p>
+        <p>&copy; 2023 Web Programming Course</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
+
 </html>

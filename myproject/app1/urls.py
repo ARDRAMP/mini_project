@@ -14,4 +14,5 @@ urlpatterns = [
     path('enroll/', views.enroll, name ='enroll'),
     path('task/', views.task, name ='task'),
     path('calendar/', views.calendar, name ='calendar'),
+    path('dashboard/', views.dashboard, name ='dashboard'),
 ]
