@@ -1,6 +1,7 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-
+from .models import Enrollment
 # Create your views here.
 # @login_required(login_url='login')
 def index(request):
@@ -15,7 +16,21 @@ def c3(request):
 def studenthome(request):
     return render(request,'studenthome.html')
 def enroll(request):
-    return render(request,'enroll.html')
+    if request.method == 'POST':
+        # Get the course name from the form submission
+        course_name = request.POST.get('courses')
+
+        # Get the currently logged-in user
+        user = request.user
+
+        # Create an enrollment record
+        Enrollment.objects.create(user=user, course_name=course_name)
+
+        # Return a JSON response indicating success
+        return JsonResponse({'status': 'success'})
+
+    return render(request, 'enroll.html')
+
 def task(request):
     return render(request,'task.html')
 def calendar(request):
@@ -25,7 +40,7 @@ def dashboard(request):
 
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import CustomUser
+from .models import CustomUser, Enrollment
 
 from django.contrib import messages
 from django.shortcuts import render, redirect

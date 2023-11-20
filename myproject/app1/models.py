@@ -15,3 +15,9 @@ class CustomUser(AbstractUser):
     mother_name = models.CharField(max_length=255)
     parent_contact = models.CharField(max_length=20)
     REQUIRED_FIELDS = []
+
+
+class Enrollment(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    course_name = models.CharField(max_length=255)
+   

@@ -29,6 +29,7 @@
             text-decoration: none;
             font-size: 18px;
         }
+
         h1 {
             margin: 0 auto; /* Center the text horizontally */
         }
@@ -58,6 +59,15 @@
         li {
             margin-bottom: 10px;
         }
+
+        .add-task-form {
+            margin-top: 20px;
+        }
+
+        .completed-task {
+            text-decoration: line-through;
+            color: #888;
+        }
     </style>
 </head>
 <body>
@@ -69,22 +79,45 @@
 
     <section>
         <h2>Your Tasks</h2>
-        <ul>
-            <li>
-                <input type="checkbox" id="task1" name="task1">
-                <label for="task1">Complete programming assignment</label>
-            </li>
-            <li>
-                <input type="checkbox" id="task2" name="task2">
-                <label for="task2">Read chapters 5-7 for history class</label>
-            </li>
-            <li>
-                <input type="checkbox" id="task3" name="task3">
-                <label for="task3">Prepare for upcoming math quiz</label>
-            </li>
-            <!-- Add more tasks as needed -->
+        <ul id="task-list">
+            <!-- Tasks will be dynamically added here -->
         </ul>
+
+        <form class="add-task-form">
+            <label for="new-task">Add a new task:</label>
+            <input type="text" id="new-task" name="new-task" required>
+            <button type="button" onclick="addTask()">Add Task</button>
+        </form>
     </section>
+
+    <script>
+        function addTask() {
+            var newTaskInput = document.getElementById('new-task');
+            var taskList = document.getElementById('task-list');
+
+            if (newTaskInput.value.trim() !== "") {
+                var newTask = document.createElement('li');
+                newTask.innerHTML = `
+                    <input type="checkbox" id="task${taskList.children.length + 1}" name="task${taskList.children.length + 1}">
+                    <label for="task${taskList.children.length + 1}">${newTaskInput.value}</label>
+                    <button type="button" onclick="completeTask(this)">Complete</button>
+                    <button type="button" onclick="removeTask(this)">Remove</button>
+                `;
+                taskList.appendChild(newTask);
+                newTaskInput.value = '';
+            }
+        }
+
+        function completeTask(button) {
+            var taskLabel = button.previousElementSibling;
+            taskLabel.classList.toggle('completed-task');
+        }
+
+        function removeTask(button) {
+            var task = button.parentElement;
+            task.parentElement.removeChild(task);
+        }
+    </script>
 
 </body>
 </html>
