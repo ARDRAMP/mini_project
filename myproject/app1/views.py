@@ -15,6 +15,8 @@ def c3(request):
     return render(request,'c3.html')
 def studenthome(request):
     return render(request,'studenthome.html')
+def teacherhome(request):
+    return render(request,'teacherhome.html')
 def enroll(request):
     if request.method == 'POST':
         # Get the course name from the form submission

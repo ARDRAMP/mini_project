@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        h1 {
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ddd;
+            padding: 1em;
+        }
+
+        section {
+            margin: 1em;
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        section i {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        section h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        {% comment %} {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Logout</a>
+        {% else %} 
+        <a href="{% url 'login' %}">Login</a>
+        {% endif %} {% endcomment %}
+
+        <h1>Welcome to Teacher's Portal</h1>
+    </header>
+
+    <nav><br><br></nav>
+
+    <section id="profile"><br><br>
+        <i class="fas fa-user"></i>
+        <a href="#profile"><h2>Profile</h2></a>
+    </section>
+
+    <section id="calendar"><br><br>
+        <i class="fas fa-calendar-alt"></i>
+        <a href=""><h2>Calendar</h2></a>
+    </section>
+
+    <section id="tasks"><br><br>
+        <i class="fas fa-tasks"></i>
+        <a href=""><h2>Tasks</h2></a>
+    </section>
+
+    <section id="courses"><br><br>
+        <i class="fas fa-chalkboard-teacher"></i>
+        <a href=""><h2>Courses</h2></a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Teacher's Portal. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
