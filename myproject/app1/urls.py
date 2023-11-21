@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from.import views 
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -15,4 +16,9 @@ urlpatterns = [
     path('task/', views.task, name ='task'),
     path('calendar/', views.calendar, name ='calendar'),
     path('dashboard/', views.dashboard, name ='dashboard'),
+    path('admincourse/', views.admincourse, name ='admincourse'),
+    path('studentlist/', views.studentlist, name ='studentlist'),
+   path('logout/', auth_views.LogoutView.as_view(), name="logout"),
 ]
+
+

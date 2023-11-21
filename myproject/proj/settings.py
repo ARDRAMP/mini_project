@@ -129,3 +129,7 @@ AUTH_USER_MODEL = 'app1.CustomUser'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_URL = 'register'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_URL ='logout'
+LOGOUT_REDIRECT_URL = 'index'

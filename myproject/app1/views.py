@@ -1,9 +1,9 @@
-from django.http import JsonResponse
+from telnetlib import LOGOUT
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from .models import Enrollment
-# Create your views here.
-# @login_required(login_url='login')
+from .models import Enrollment, Teacher
+
 def index(request):
     return render(request,'index.html')
     
@@ -35,8 +35,8 @@ def task(request):
     return render(request,'task.html')
 def calendar(request):
     return render(request,'calendar.html')
-def dashboard(request):
-    return render(request,'dashboard.html')
+def admincourse(request):
+     return render(request,'admincourse.html')
 
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -99,14 +99,54 @@ def user_login(request):
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
-            login(request, user)
-            return redirect('studenthome')  # Replace 'index' with the name of your home page URL pattern
+            
+            if user.is_student:
+                login(request, user)
+                return redirect('studenthome')
+            elif user.is_teacher:
+                login(request, user)
+                return redirect('studenthome')
+
         else:
             error_message = "Invalid credentials. Please try again."
+
 
             # You can pass the error message to the template for display
             return render(request, "login.html", {'error_message': error_message, 'username': username})
 
     # If the request method is GET, just render the login page
     return render(request, "login.html")
+from django.shortcuts import render, redirect
+from .models import Teacher
+from django.http import HttpResponse
 
+def dashboard(request):
+    if request.method == 'POST':
+        # Get data from the form
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        course = request.POST.get('course')
+
+        # Create a new Teacher object and save it to the database
+        new_teacher = Teacher(name=name, email=email, password=password, course=course)
+        new_teacher.save()
+
+        new_user = CustomUser.objects.create_user(username=email, email=email, password=password)
+        new_user.is_student = False 
+        new_user.is_teacher = True 
+        new_user.save()        
+        return redirect('dashboard') 
+
+    # If the request method is not POST, render the dashboard page
+    teachers = Teacher.objects.all()
+    return render(request, 'dashboard.html', {'teachers': teachers})
+
+
+
+def studentlist(request):
+
+    return render(request, 'studentlist.html')
+def loggout(request):
+    LOGOUT(request)
+    return redirect("index")
