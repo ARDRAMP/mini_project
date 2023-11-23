@@ -21,6 +21,10 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name="logout"),
     path('admincourse/', views.admincourse, name ='admincourse'),
     path('teacherhome/', views.teacherhome, name ='teacherhome'),
+    path('profile/', views.profile, name ='profile'),
+    path('changepassword/', views.changepassword, name ='changepassword'),
+    path('teacherprofile/', views.teacherprofile, name ='teacherprofile'),
+
 ]
 
 

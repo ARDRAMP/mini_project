@@ -39,6 +39,11 @@ def calendar(request):
     return render(request,'calendar.html')
 def admincourse(request):
      return render(request,'admincourse.html')
+def profile(request):
+     return render(request,'profile.html')
+def teacherprofile(request):
+     return render(request,'teacherprofile.html')
+
 
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -107,7 +112,7 @@ def user_login(request):
                 return redirect('studenthome')
             elif user.is_teacher:
                 login(request, user)
-                return redirect('studenthome')
+                return redirect('teacherhome')
 
         else:
             error_message = "Invalid credentials. Please try again."
@@ -118,6 +123,9 @@ def user_login(request):
 
     # If the request method is GET, just render the login page
     return render(request, "login.html")
+
+
+
 from django.shortcuts import render, redirect
 from .models import Teacher
 from django.http import HttpResponse
@@ -149,6 +157,36 @@ def dashboard(request):
 def studentlist(request):
 
     return render(request, 'studentlist.html')
+
+
 def loggout(request):
     LOGOUT(request)
     return redirect("index")
+
+
+from django.contrib.auth import update_session_auth_hash
+def changepassword(request):
+    # if request.method == 'POST':
+    #     old_password = request.POST.get('old_password')  # Get the old password from the form
+    #     new_password = request.POST.get('new_password')
+    #     confirm_password = request.POST.get('confirm_password')
+
+    #     user = request.user  # Get the currently logged-in user
+
+    #     # Check if the entered old password matches the user's current password
+    #     if not user.check_password(old_password):
+    #         return JsonResponse({'error': 'Incorrect old password'}, status=400)
+
+    #     if new_password == confirm_password:
+    #         # Change the user's password and save it to the database
+    #         user.set_password(new_password)
+    #         user.save()
+
+    #         # Update the session to keep the user logged in
+    #         update_session_auth_hash(request, user)
+
+    #         return JsonResponse({'message': 'Password changed successfully'})
+    #     else:
+    #         return JsonResponse({'error': 'Passwords do not match'}, status=400)
+
+    return render(request, 'changepassword.html')
