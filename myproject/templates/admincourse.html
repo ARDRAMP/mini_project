@@ -86,12 +86,12 @@
     <header>
         <h1>Admin - Course Management</h1>
     </header>
-    <nav>
+    {% comment %} <nav>
         <a href="#">View Courses</a>
         <a href="#">Add Course</a>
         <a href="#">Assign Courses</a>
         <a href="#">Delete Course</a>
-    </nav>
+    </nav> {% endcomment %}
     <section>
         <h2>View Courses</h2>
         <table>
@@ -104,15 +104,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                {% comment %} <tr>
                     <td>1</td>
                     <td>John Doe</td>
                     <td>john.doe@example.com</td>
                     <td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-                </tr>
+                </tr> {% endcomment %}
                 <!-- Courses will be dynamically populated here -->
             </tbody>
-        </table>
+        </table><br><br><br>
 
         <h2>Add Course</h2>
         <form id="addCourseForm">
@@ -125,7 +125,7 @@
             <input type="submit" value="Add Course">
         </form>
 
-        <h2>Assign Courses to Teachers</h2>
+        {% comment %} <h2>Assign Courses to Teachers</h2>
         <form id="assignCoursesForm">
             <label for="teacher">Teacher:</label>
             <input type="text" id="teacher" name="teacher" required>
@@ -134,7 +134,7 @@
             <input type="text" id="assignedCourses" name="assignedCourses" required>
 
             <input type="submit" value="Assign Courses">
-        </form>
+        </form> {% endcomment %}
     </section>
 
     <script>

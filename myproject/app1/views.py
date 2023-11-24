@@ -61,7 +61,6 @@ def register(request):
         password = request.POST['password']
         confirm_password = request.POST['confirm_password']
         disability_type = request.POST['disability_type']
-        assistance_required = request.POST['assistance_required']
         parent_name = request.POST['parent_name']
         parent_nam = request.POST['parent_nam']
         parent_contact = request.POST['parent_contact']
@@ -77,7 +76,6 @@ def register(request):
             first_name=name,
             email=email,
             disability_type=disability_type,
-            assistance_required=assistance_required,
             father_name=parent_name,
             mother_name=parent_nam,
             parent_contact=parent_contact
@@ -113,6 +111,9 @@ def user_login(request):
             elif user.is_teacher:
                 login(request, user)
                 return redirect('teacherhome')
+            elif user.is_superuser:
+                login(request, user)
+                return redirect('dashboard')
 
         else:
             error_message = "Invalid credentials. Please try again."

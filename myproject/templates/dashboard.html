@@ -88,11 +88,11 @@
         <h1>Student Management System</h1>
     </header>
     <nav>
-        <a href="#">Dashboard</a>
+        {% comment %} <a href="#">Dashboard</a> {% endcomment %}
         <a href="{% url 'studentlist' %}">Students</a>
         <a href="{% url 'admincourse' %}">Courses</a>
         <a href="#">Reports</a>
-        <a href="#">Settings</a>
+        <a href="#">logout</a>
     </nav>
     <section>
         <h2>Welcome, Admin!</h2>
@@ -115,8 +115,8 @@
                         <td>{{ teacher.email }}</td>
                         <td>{{ teacher.course }}</td>
                         <td>
-                            <a href="#">Edit</a> |
-                            <a href="#">Delete</a>
+                            <a href="#">Active</a> |
+                            <a href="#">Inactive</a>
                         </td>
                     </tr>
                 {% endfor %}
