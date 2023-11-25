@@ -88,14 +88,12 @@
         <h1>Student Management System</h1>
     </header>
     <nav>
-        <a href="#">Dashboard</a>
+        {% comment %} <a href="#">Dashboard</a> {% endcomment %}
         <a href="{% url 'studentlist' %}">Students</a>
         <a href="{% url 'admincourse' %}">Courses</a>
-        <a href="#">Reports</a>
-        <a href="#">Settings</a>
+        {% comment %} <a href="#">Reports</a>
+        <a href="#">Settings</a> {% endcomment %}
     </nav>
-  
-        
-    </section>
+  </section>
 </body>
 </html>

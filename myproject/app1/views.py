@@ -95,7 +95,6 @@ def register(request):
     
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
-
 def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -155,10 +154,9 @@ def dashboard(request):
 
 
 
+
 def studentlist(request):
-
     return render(request, 'studentlist.html')
-
 
 def loggout(request):
     LOGOUT(request)
